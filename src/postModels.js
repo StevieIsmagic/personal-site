@@ -12,6 +12,4 @@ const PostSchema = new Schema({
   },
 });
 
-const Food = mongoose.model('Post', PostSchema);
-
-module.exports = Food;
+module.exports = mongoose.model('Post', PostSchema);
