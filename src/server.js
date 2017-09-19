@@ -9,7 +9,11 @@ const server = express();
 server.use(bodyParser.json());
 
 server.post('/posts', (req, res) => {
-  res.send('create');
+  const post = new Post(req.body);
+  food.save((err, newPost) => {
+    if (err) return res.send(err);
+    res.send(food);
+  });
 });
 
 server.get('/posts', (req, res) => {
