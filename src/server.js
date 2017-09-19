@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-// const server = require('./server');
 const mongoose = require('mongoose');
 const Post = require('./postModels.js');
 
@@ -21,7 +20,7 @@ server.get('/posts', (req, res) => {
   //res.send('hi\n');
   Post.find({}, (err, post) => {
     if (err) return res.send(err);
-    res.send(post);
+    res.json(post);
   });
 });
 
