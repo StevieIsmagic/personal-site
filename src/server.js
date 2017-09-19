@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 // const server = require('./server');
 const mongoose = require('mongoose');
+const Post = require('./postModels.js');
 
 const server = express();
 
@@ -12,7 +13,12 @@ server.post('/posts', (req, res) => {
 });
 
 server.get('/posts', (req, res) => {
-  res.send('read');
+  console.log('Hello from server.get /posts route!');
+  //res.send('hi\n');
+  Post.find({}, (err, post) => {
+    if (err) return res.send(err);
+    res.send(post);
+  });
 });
 
 server.put('/posts', (req, res) => {
@@ -25,9 +31,12 @@ server.delete('/posts/:id', (req, res) => {
 
 mongoose.connect('mongodb://localhost/steviePosts', {}, (err) => {
   if (err) return console.log(err);
-  console.log('connected to steviePosts DB');
+  console.log('Connected to steviePosts DataBase');
 });
 
-server.listen(8080, () => {
-  console.log('stevie server listening on port 8080');
+server.listen(8080, (err) => {
+  if (err) return console.log('errrr');
+  console.log('Stevie Server listening on port 8080');
 });
+
+module.exports = server;
