@@ -38,7 +38,16 @@ server.get('/posts', (req, res) => {
 });
 
 server.put('/posts', (req, res) => {
-  res.send('update');
+   const postID = req.body.id;
+   Post.find(postID, (err, post) => {
+     if(err) return res.send(err);
+     post.title = req.body.title;
+     post.content = req.body.content;
+     post.save((err) => {
+       if (err) return res.send(err);
+       res.json({message: 'Post was updated, Steven!'});
+     });
+   });
 });
 
 server.delete('/posts/:id', (req, res) => {
