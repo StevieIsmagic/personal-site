@@ -37,15 +37,16 @@ server.get('/posts', (req, res) => {
   });
 });
 
-server.put('/posts', (req, res) => {
-   const postID = req.body.id;
-   Post.find(postID, (err, post) => {
+server.put('/posts/:post_id', (req, res) => {
+  console.log(req.body);
+   const postId = req.params.post_id;
+   Post.findById(postId, (err, post) => {
      if(err) return res.send(err);
      post.title = req.body.title;
      post.content = req.body.content;
      post.save((err) => {
-       if (err) return res.send(err);
-       res.json({message: 'Post was updated, Steven!'});
+       if (err) res.send(err);
+       res.json({ message: 'Post was updated, Steven!' });
      });
    });
 });
