@@ -9,13 +9,13 @@ const server = express();
 server.use(bodyParser.json());
 //server.use(bodyParser.urlencoded({ extended: false }));
 
-// const corsOptions = {
-//   "origin": "http://localhost:3000",
-//   "methods": "GET, HEAD, PUT, PATCH, POST, DELETE",
-//   "preflightContinue": true,
-//   "optionsSuccessStatus": 204,
-//   "credentials": true // enable set cookie
-// };
+const corsOptions = {
+  "origin": "http://localhost:3000",
+  "methods": "GET, HEAD, PUT, PATCH, POST, DELETE",
+  "preflightContinue": true,
+  "optionsSuccessStatus": 204,
+  "credentials": true // enable set cookie
+};
 //server.use(cors(corsOptions));
 
 server.post('/posts', (req, res) => {
@@ -51,12 +51,8 @@ server.put('/posts/:post_id', (req, res) => {
    });
 });
 
-server.delete('/posts/:post_id', (req, res) => {
-  console.log(req.body);
-  Post.remove({_id: req.params.post_id},(err, post) => {
-    if (err) return res.send(err);
-    res.json({ message: 'Successful Deletion of Post' });
-  });
+server.delete('/posts/:id', (req, res) => {
+  res.send('delete');
 });
 
 mongoose.connect('mongodb://localhost/postsTest', {useMongoClient: true}, (err) => {
@@ -66,5 +62,5 @@ mongoose.connect('mongodb://localhost/postsTest', {useMongoClient: true}, (err) 
 
 server.listen(8080, (err) => {
   if (err) return console.log('errrr');
-  console.log('Stevie BackEnd Server listening on port 8080');
+  console.log('Stevie Server listening on port 8080');
 });
