@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-class AllPosts extends Component {
+class IndividualPost extends Component {
   render() {
     return (
-      < IndividualPost />
+      < WHAT DO I RETURN HERE ? /> 
     );
   }
 }
