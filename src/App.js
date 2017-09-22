@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Route } from 'react-router-dom';
+import AllPosts from './components/AllPosts.js';
+
 import './App.css';
 
 class App extends Component {
@@ -16,7 +18,7 @@ class App extends Component {
           This file is exported to index.js for ultimate page render as DOM 'root'
           All page routes from react-router-dom will go in this component
         </p>
-
+        <Navigation />
         <AllPosts /> 
 
       </div>
