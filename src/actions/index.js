@@ -6,9 +6,9 @@ export const UPDATE_POST = "UPDATE_POST";
 export const DELETE_POST = "DELETE_POST";
 
 export const getPosts = () => {
-  const promise = axios.get('http://localhost:8080/posts');
+  const promise = axios.get('http://localhost:8080/');
   return {
-		type: GET_POSTS, // action type CAPS
+		type: GET_POSTS,
 		payload: promise  
 	};
 };

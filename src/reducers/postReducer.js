@@ -1,7 +1,12 @@
-import { POST_ACTIONS } from '../actions';
+import { 
+  GET_POSTS,
+  NEW_POST,
+  UPDATE_POST,
+  DELETE_POST
+ } from '../actions';
 
 // look @ AXIOS LAB FOR THESE REQUESTS - lines with return statements should be changed
-export default (posts = {}, action) => {
+export default (posts = [], action) => {
   switch (action.type) {
     case GET_POSTS:
       return action.payload.data;
