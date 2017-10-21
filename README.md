@@ -1,7 +1,9 @@
 # NOTE
  
 (1) Use `mongod --dbpath testData` to initiate the postsTest Database
+
 (2) `nodemon api/server.js` to initiate server on port 8080
+
 (2) `npm start` to initiate the localhost on port 3000
 
 ****************************************************************************************
