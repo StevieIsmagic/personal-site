@@ -16,7 +16,7 @@ const corsOptions = {
   "optionsSuccessStatus": 204,
   "credentials": true // enable set cookie
 };
-//server.use(cors(corsOptions));
+server.use(cors(corsOptions));
 
 server.post('/posts', (req, res) => {
   const { title, content } = req.body;

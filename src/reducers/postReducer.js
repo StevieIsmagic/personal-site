@@ -2,14 +2,17 @@ import {
   GET_POSTS,
   NEW_POST,
   UPDATE_POST,
-  DELETE_POST
+  DELETE_POST,
  } from '../actions';
+
+ 
 
 // look @ AXIOS LAB FOR THESE REQUESTS - lines with return statements should be changed
 export default (posts = [], action) => {
   switch (action.type) {
     case GET_POSTS:
-      return action.payload.data;
+      console.log(`THIS IS PAYLOAD >>>>>>` + [...posts]);
+      return {...posts};
     case NEW_POST:
       return action.payload.data;
     case UPDATE_POST:
@@ -17,6 +20,6 @@ export default (posts = [], action) => {
     case DELETE_POST:
       return action.payload.data;
     default:
-      return posts;
+      return posts
   }
 };

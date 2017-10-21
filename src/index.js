@@ -5,19 +5,21 @@ import AllPosts from './components/AllPosts.js';
 import Navigation from './components/Navigation.js';
 import IndividualPost from './components/IndividualPost.js';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import ReduxThunk from 'redux-thunk';
+import { createStore } from 'redux';
 import {
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom';
-import reducers from './reducers';
+import rootReducer from './reducers/index.js';
 import './index.css';
 
-const createStoreWithMiddleware = applyMiddleware(ReduxThunk)(createStore);
+let store = createStore(rootReducer);
+console.log(store.getState());
+
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>
+  <Provider store={store} >
+    
     <Router>
       <div className="App">
         <Route path='/' component={ Navigation } />

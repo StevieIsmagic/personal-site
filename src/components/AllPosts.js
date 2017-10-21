@@ -5,15 +5,17 @@ import { getPosts } from '../actions/index.js';
 import  IndividualPost from '../components/IndividualPost.js';
 
 class AllPosts extends Component {
-  componentDidMount(){
-    this.props.getPosts() // where does getFriends() come from. Is this its first instantiation ?
+  
+  componentWillMount(){
+    this.props.getPosts()
   }
+
   render() {
     return (
       <div>
         <h1> Inside ALL Posts Component </h1>
         <ul>
-          {this.props.posts.map((post, index) => {
+          {Object.keys(this.props.posts).forEach((post, index) => {
             return (
               <IndividualPost post={post} i={index} />
             );
