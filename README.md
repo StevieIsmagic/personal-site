@@ -4,7 +4,7 @@
 
 (2) `nodemon api/server.js` to initiate server on port 8080
 
-(2) `npm start` to initiate the localhost on port 3000
+(3) `npm start` to initiate the localhost on port 3000
 
 ****************************************************************************************
 # PERSONAL WEBSITE
