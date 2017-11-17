@@ -26,6 +26,7 @@ class Navigation extends Component {
         
           <div>
             <ul style={ulStyle}>
+            <li style={liStyle}><Link to="/home"> Home </Link></li>
             <li style={liStyle}><Link to="/about"> About Me </Link></li>
             <li style={liStyle}><Link to="/contact"> Portfolio </Link></li>
             <li style={liStyle}><Link to="/posts"> Blog Posts </Link></li>

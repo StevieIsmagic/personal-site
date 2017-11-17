@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import rootReducer from './reducers/index.js'
 import Contact from './components/Contact'
 import About from './components/About'
+import Home from './components/Home'
 
 import './index.css'
 
@@ -29,6 +30,7 @@ ReactDOM.render(
         <Route path="/posts/:post_id" component={IndividualPost} />
         <Route path="/contact" component={Contact} />
         <Route path="/about" component={About} />
+        <Route path="/home" component={Home} />
       </div>
     </Router>
   </Provider>,

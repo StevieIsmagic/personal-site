@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Option from 'muicss/lib/react/option';
-import Select from 'muicss/lib/react/select';
 
 
 var ulStyle = {
