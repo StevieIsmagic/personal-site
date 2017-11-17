@@ -9,6 +9,9 @@ import { createStore, applyMiddleware } from 'redux'
 import promiseMiddleware from 'redux-promise'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import rootReducer from './reducers/index.js'
+import Contact from './components/Contact'
+import About from './components/About'
+
 import './index.css'
 
 const createStoreWithMiddleware = applyMiddleware(promiseMiddleware)(
@@ -24,6 +27,8 @@ ReactDOM.render(
         <Route path="/" component={Navigation} />
         <Route path="/posts" component={AllPosts} />
         <Route path="/posts/:post_id" component={IndividualPost} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/about" component={About} />
       </div>
     </Router>
   </Provider>,
