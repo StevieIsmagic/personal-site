@@ -31,6 +31,8 @@ ReactDOM.render(
         <Route path="/portfolio" component={Portfolio} />
         <Route path="/about" component={About} />
         <Route path="/home" component={Home} />
+
+        
       </div>
     </Router>
   </Provider>,
