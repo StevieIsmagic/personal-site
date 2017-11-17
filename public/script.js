@@ -48,3 +48,4 @@ jQuery(function($) {
     $(this).next().slideToggle(200);
   });
 });
+
