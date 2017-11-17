@@ -9,7 +9,7 @@ import { createStore, applyMiddleware } from 'redux'
 import promiseMiddleware from 'redux-promise'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import rootReducer from './reducers/index.js'
-import Contact from './components/Contact'
+import Portfolio from './components/Portfolio'
 import About from './components/About'
 import Home from './components/Home'
 
@@ -28,7 +28,7 @@ ReactDOM.render(
         <Route path="/" component={Navigation} />
         <Route path="/posts" component={AllPosts} />
         <Route path="/posts/:post_id" component={IndividualPost} />
-        <Route path="/contact" component={Contact} />
+        <Route path="/portfolio" component={Portfolio} />
         <Route path="/about" component={About} />
         <Route path="/home" component={Home} />
       </div>

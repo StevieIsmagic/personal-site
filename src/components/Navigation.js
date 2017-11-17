@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 //import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../App.css';
-import Appbar from 'muicss/lib/react/appbar';
-import { randomBytes } from 'crypto';
 
 var ulStyle = {
   background: "#eee",
@@ -28,7 +26,7 @@ class Navigation extends Component {
             <ul style={ulStyle}>
             <li style={liStyle}><Link to="/home"> Home </Link></li>
             <li style={liStyle}><Link to="/about"> About Me </Link></li>
-            <li style={liStyle}><Link to="/contact"> Portfolio </Link></li>
+            <li style={liStyle}><Link to="/portfolio"> Portfolio </Link></li>
             <li style={liStyle}><Link to="/posts"> Blog Posts </Link></li>
             </ul>
           </div>
