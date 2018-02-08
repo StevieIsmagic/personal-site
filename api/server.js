@@ -2,12 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Post = require('./postModels.js');
-const cors = require('cors');
+//const cors = require('cors');
 
 const server = express();
 
 server.use(bodyParser.json());
-//server.use(bodyParser.urlencoded({ extended: false }));
+server.use(bodyParser.urlencoded({ extended: false }));
 
 const corsOptions = {
   "origin": "http://localhost:3000",
@@ -16,7 +16,7 @@ const corsOptions = {
   "optionsSuccessStatus": 204,
   "credentials": true // enable set cookie
 };
-server.use(cors(corsOptions));
+//server.use(cors(corsOptions));
 
 server.post('/posts', (req, res) => {
   const { title, content } = req.body;
